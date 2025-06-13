@@ -110,3 +110,35 @@ print(is_even(7))  # Output: Odd
 Try writing similar functions, like one that returns the square of a number or checks if a string is a palindrome, to get comfortable with `return`.
 
 If you want more examples, practice problems, or a deeper dive into specific use cases, let me know!
+
+
+---
+
+❤️ Give me a solid example "Exiting a Function" by code where there is non executable code 
+
+
+---
+
+Below is a clear example demonstrating how the `return` statement exits a function early, preventing subsequent code from executing. The example includes non-executable code after the `return` to illustrate this behavior.
+
+```python
+def check_age(age):
+    if age < 18:
+        return "Minor - Access Denied"
+    # Code after this point won't run if age < 18
+    return "Adult - Access Granted"
+    # Non-executable code below
+    print("This line will never execute because return exits the function")
+    result = age * 2
+    return result  # This return is unreachable
+
+# Test the function
+print(check_age(15))  # Output: Minor - Access Denied
+print(check_age(20))  # Output: Adult - Access Granted
+```
+
+### Explanation
+- If `age < 18`, the function returns `"Minor - Access Denied"` and exits immediately.
+- If `age >= 18`, it skips the first `return` and reaches `return "Adult - Access Granted"`.
+- The code after the second `return` (e.g., `print` and another `return`) is non-executable because the function always exits at one of the earlier `return` statements.
+- This shows how `return` terminates the function, making any code after it unreachable.
